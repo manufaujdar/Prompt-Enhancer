@@ -1,6 +1,9 @@
-# Prompt Enhancer API
+# Prompt Enhancer
 
-A FastAPI-based service that enhances prompts using Microsoft's Promptist model. This API helps improve the quality and effectiveness of text prompts for better AI model interactions.
+A Python framework and FastAPI service for evaluating, enhancing, and optimizing
+prompts before LLM API calls. The current API uses Microsoft's Promptist model
+to improve the clarity and effectiveness of text prompts for AI-model
+interactions.
 
 ## Features
 
