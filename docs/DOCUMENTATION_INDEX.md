@@ -6,11 +6,12 @@ license is declared; it also lacks tests and production hardening.
 
 ## Current source of truth
 
-- README.md: endpoint examples and local setup.
-- main.py: current executable behavior.
-- render.yaml: hosted-service intent.
-- docs/architecture.md: runtime and data flow.
-- docs/technical-overview.md: code, dependency, operations, and gap baseline.
+- [README](../README.md): endpoint examples and local setup.
+- [Local development](development.md): isolated setup, file placement and validation limits.
+- [main.py](../main.py): current executable behavior.
+- [render.yaml](../render.yaml): hosted-service intent.
+- [Architecture](architecture.md): runtime and data flow.
+- [Technical overview](technical-overview.md): code, dependency, operations, and gap baseline.
 
 ## Required initial set
 
