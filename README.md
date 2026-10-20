@@ -2,6 +2,8 @@
 
 A FastAPI-based service that enhances prompts using Microsoft's Promptist model. This API helps improve the quality and effectiveness of text prompts for better AI model interactions.
 
+[Documentation map](docs/DOCUMENTATION_INDEX.md) · [Local development](docs/development.md) · [Architecture](docs/architecture.md) · [Technical baseline and gaps](docs/technical-overview.md)
+
 ## Features
 
 - **Prompt Enhancement**: Transform basic prompts into more detailed, effective versions
@@ -13,17 +15,20 @@ A FastAPI-based service that enhances prompts using Microsoft's Promptist model.
 ## Installation
 
 1. Clone the repository:
+
 ```bash
-git clone <repository-url>
+git clone https://github.com/manufaujdar/Prompt-Enhancer.git
 cd Prompt-Enhancer
 ```
 
 2. Install dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 3. Run the application:
+
 ```bash
 python main.py
 ```
@@ -36,6 +41,7 @@ The API will be available at `http://localhost:8000`
 Health check endpoint that confirms the API is running.
 
 **Response:**
+
 ```json
 {
   "message": "Prompt Enhancer API is running"
@@ -46,6 +52,7 @@ Health check endpoint that confirms the API is running.
 Detailed health check that includes model status.
 
 **Response:**
+
 ```json
 {
   "status": "healthy",
@@ -57,6 +64,7 @@ Detailed health check that includes model status.
 Enhance a prompt using the Promptist model.
 
 **Request Body:**
+
 ```json
 {
   "text": "a cat sitting on a chair"
@@ -64,6 +72,7 @@ Enhance a prompt using the Promptist model.
 ```
 
 **Response:**
+
 ```json
 {
   "improved_prompt": "a beautiful cat sitting comfortably on a wooden chair",
@@ -74,6 +83,7 @@ Enhance a prompt using the Promptist model.
 ## Usage Examples
 
 ### Using curl
+
 ```bash
 curl -X POST "http://localhost:8000/enhance" \
      -H "Content-Type: application/json" \
@@ -81,6 +91,7 @@ curl -X POST "http://localhost:8000/enhance" \
 ```
 
 ### Using Python requests
+
 ```python
 import requests
 
@@ -108,13 +119,20 @@ The API returns appropriate HTTP status codes:
 ## Development
 
 ### Running in Development Mode
+
 ```bash
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-### Environment Variables
-- `PORT`: Server port (default: 8000)
-- `HOST`: Server host (default: 0.0.0.0)
+### Host and port
+
+`python main.py` binds to `0.0.0.0:8000`. Select a local-only address or another
+port through Uvicorn's command-line options; `main.py` does not read `HOST` or
+`PORT` environment variables:
+
+```bash
+uvicorn main:app --reload --host 127.0.0.1 --port 8000
+```
 
 ## Dependencies
 
